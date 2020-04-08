@@ -103,6 +103,8 @@
         var x = (1/ (p1+1)) + (1/(p2+1)) + (1/(p3+1)) + (1/(p4+1)) + (1/(p5+1)) + (1/(p6+1));
         x = (1/x) * 100;
         x = x.toFixed(2);
+        x = x.toString();
+        x = x + "%";
         document.getElementById("result").innerHTML = x;
       }
     </script>
