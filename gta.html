@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://use.fontawesome.com/848c511a57.js"></script>
+    <title>Inside Track Return</title>
+
+  </head>
+  <body>
+
+    <style media="screen">
+      .input-boxes {
+        padding-left: 75px;
+        padding-right: 75px;
+      }
+    </style>
+
+    <div class="title" style="padding-top: 40px">
+      <h1 class="text-center">GTA V Casino Expected Return</h1>
+      <h3 class="text-center">Inside Track</h3>
+    </div>
+
+
+    <div class="input-boxes">
+
+      <div class="form">
+        <div class="row">
+          <div class="col-xs-12 col-sm-6 col-lg-4">
+            <div class="form-group">
+              <label for="exampleInputEmail1">Horse 1</label>
+              <input type="text" class="form-control" id="p1" aria-describedby="emailHelp" placeholder="Horse 1 odds: _/1">
+            </div>
+          </div>
+
+          <div class="col-sm-12 col-lg-4 ">
+            <div class="form-group">
+              <label for="exampleInputEmail1">Horse 2</label>
+              <input type="text" class="form-control" id="p2" aria-describedby="emailHelp" placeholder="Horse 2 odds: _/1">
+            </div>
+          </div>
+
+          <div class="col-sm-12 col-lg-4 ">
+            <div class="form-group">
+              <label for="exampleInputEmail1">Horse 3</label>
+              <input type="text" class="form-control" id="p3" aria-describedby="emailHelp" placeholder="Horse 3 odds: _/1">
+            </div>
+          </div>
+
+          <div class="col-sm-12 col-lg-4">
+            <div class="form-group">
+              <label for="exampleInputEmail1">Horse 4</label>
+              <input type="text" class="form-control" id="p4" aria-describedby="emailHelp" placeholder="Horse 4 odds: _/1">
+            </div>
+          </div>
+
+          <div class="col-sm-12 col-lg-4 ">
+            <div class="form-group">
+              <label for="exampleInputEmail1">Horse 5</label>
+              <input type="text" class="form-control" id="p5" aria-describedby="emailHelp" placeholder="Horse 5 odds: _/1">
+            </div>
+          </div>
+
+          <div class="col-sm-12 col-lg-4 ">
+            <div class="form-group">
+              <label for="exampleInputEmail1">Horse 6</label>
+              <input type="text" class="form-control" id="p6" aria-describedby="emailHelp" placeholder="Horse 6 odds: _/1">
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <button type="button" class="btn btn-light btn-block" onclick="calculate()">Calculate</button>
+
+    </div>
+
+    <div class="results">
+      <h3 class="text-center">Expected return: </h3>
+      <h3 class="text-center" id="result"></h3>
+    </div>
+
+    <script type="text/javascript">
+      function calculate(){
+        var p1 = document.getElementById("p1").value;
+        p1 = parseFloat(p1, 10);
+        var p2 = document.getElementById("p2").value;
+        p2 = parseFloat(p2, 10);
+        var p3 = document.getElementById("p3").value;
+        p3 = parseFloat(p3, 10);
+        var p4 = document.getElementById("p4").value;
+        p4 = parseFloat(p4, 10);
+        var p5 = document.getElementById("p5").value;
+        p5 = parseFloat(p5, 10);
+        var p6 = document.getElementById("p6").value;
+        p6 = parseFloat(p6, 10);
+
+        var x = (1/ (p1+1)) + (1/(p2+1)) + (1/(p3+1)) + (1/(p4+1)) + (1/(p5+1)) + (1/(p6+1));
+        x = (1/x) * 100;
+        x = x.toFixed(2);
+        document.getElementById("result").innerHTML = x;
+      }
+    </script>
+  </body>
+</html>
