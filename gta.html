@@ -74,6 +74,13 @@
             </div>
           </div>
 
+          <div class="col-sm-12 col-lg-4 ">
+            <div class="form-group">
+              <label for="exampleInputEmail1">Chips</label>
+              <input type="text" class="form-control" id="chips" aria-describedby="emailHelp" placeholder="Current number of chips">
+            </div>
+          </div>
+
         </div>
       </div>
       <button type="button" class="btn btn-light btn-block" onclick="calculate()">Calculate</button>
@@ -83,6 +90,8 @@
     <div class="results">
       <h3 class="text-center">Expected return: </h3>
       <h3 class="text-center" id="result"></h3>
+      <h3 class="text-center">Suggested bet: </h3>
+      <h3 class="text-center" id="bet"></h3>
     </div>
 
     <script type="text/javascript">
@@ -99,13 +108,21 @@
         p5 = parseFloat(p5, 10);
         var p6 = document.getElementById("p6").value;
         p6 = parseFloat(p6, 10);
+        var chips = document.getElementById("chips").value;
+        chips = parseFloat(chips, 10);
+        var max_bet = chips * .05;
 
         var x = (1/ (p1+1)) + (1/(p2+1)) + (1/(p3+1)) + (1/(p4+1)) + (1/(p5+1)) + (1/(p6+1));
         x = (1/x) * 100;
+        var y = (x-100) / (191.25964010282-100) * max_bet;
+        y = y.toFixed(2);
+        y = y.toString();
+        y = "$" + y;
         x = x.toFixed(2);
         x = x.toString();
         x = x + "%";
         document.getElementById("result").innerHTML = x;
+        document.getElementById("chips").innerHTML = y;
       }
     </script>
   </body>
