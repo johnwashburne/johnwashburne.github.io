@@ -19,7 +19,7 @@
       .results {
         padding-top: 30px;
       }
-      }
+      
     </style>
 
     <div class="title" style="padding-top: 40px">
@@ -111,10 +111,14 @@
         var chips = document.getElementById("chips").value;
         chips = parseFloat(chips, 10);
         var max_bet = chips * .1;
+        max_bet = Math.min(max_bet, 10000) // 10000 is highest possible bet
 
         var x = (1/ (p1+1)) + (1/(p2+1)) + (1/(p3+1)) + (1/(p4+1)) + (1/(p5+1)) + (1/(p6+1));
         x = (1/x) * 100;
         var y = (x-100) / (191.25964010282-100) * max_bet;
+        if (y < 0) {
+          y = 0;
+        } e
         y = y.toFixed(2);
         y = y.toString();
         y = "$" + y;
